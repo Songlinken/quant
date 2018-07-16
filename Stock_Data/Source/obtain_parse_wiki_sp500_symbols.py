@@ -4,7 +4,7 @@ import MySQLdb as mdb
 from bs4 import BeautifulSoup
 
 
-class obtain_parse_sp500(object):
+class Obtain_parse_sp500_symbols(object):
 
     def obtain_wiki_sp500_symbols(self):
         """
@@ -47,16 +47,13 @@ class obtain_parse_sp500(object):
         connection = mdb.connect(host=db_host, user=db_user, passwd=db_pass, db=db_name)
 
         # create the insert strings
-        column_str = 'ticker, instrument, name, sector, currency, created_date, last_updated_date'
+        column_str = """ticker, instrument, name, sector, 
+                     currency, created_date, last_updated_date
+                     """
         insert_str = ("%s, " * 7)[:-2]
-        final_str = "INSERT INTO :symbol (%s) VALUES (%s)" % (column_str, insert_str)
+        sql = "INSERT INTO symbol (%s) VALUES (%s)" % (column_str, insert_str)
 
         # insert symbols to database
-        cursor = connection.cursor()
-
-        try:
-            cursor.executemany(final_str, symbols)
-            cursor.commit()
-
-        except:
-            connection.rollback()
+        with connection:
+            cursor = connection.cursor()
+            cursor.executemany(sql, symbols)
