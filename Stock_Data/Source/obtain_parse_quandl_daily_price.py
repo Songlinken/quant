@@ -6,18 +6,22 @@ from sqlalchemy import create_engine
 
 
 # database connection to the MySQL instance
-db_host = 'localhost'
-db_user = 'sguo'
-db_pass = 'gsl1990~'
-db_name = 'stock'
-connection = mdb.connect(db_host, db_user, db_pass, db_name)
+class mysql_engine():
+    db_host = 'localhost'
+    db_user = 'sguo'
+    db_pass = 'gsl1990~'
+    db_name = 'stock'
+    connection = mdb.connect(db_host, db_user, db_pass, db_name)
+    engine = create_engine('mysql+mysqldb://sguo:gsl1990~@localhost:3306/stock?charset=utf8')
+
+
 quandl.ApiConfig.api_key = 'Jszm-d1BscjHYRVaMmUX'
 
 
 def obtain_list_of_db_tickers():
     # obtain tickers from database
-    with connection:
-        cur = connection.cursor()
+    with mysql_engine().connection:
+        cur = mysql_engine().connection.cursor()
         cur.execute("SELECT id, ticker FROM symbol")
         data = cur.fetchall()
         id_and_symbols = list(data)
@@ -37,7 +41,7 @@ def get_daily_historic_data_quandl(id_and_symbols, start_date='2000-01-01', end_
             data_set.append(data)
 
     except Exception as e:
-        print("Could not download Quandl data: %s" % e)
+        print('Could not download Quandl data: %s' % e)
 
     data_set = pd.concat(data_set)
 
@@ -46,6 +50,7 @@ def get_daily_historic_data_quandl(id_and_symbols, start_date='2000-01-01', end_
 
 def insert_daily_data_into_db(data_set):
     # insert data to daily_price table
+    import ipdb;ipdb.set_trace()
     today = datetime.date.today()
     columns_in_db = ['data_vendor_id', 'symbol_id', 'price_date', 'created_date', 'last_updated_date', 'open_price',
                      'high_price', 'low_price', 'close_price', 'adj_close_price', 'volume']
@@ -63,9 +68,7 @@ def insert_daily_data_into_db(data_set):
 
     data_set = data_set.rename(columns=column_name_mapping)
     data_set = data_set[columns_in_db]
-
-    engine = create_engine('mysql+mysqldb://sguo:gsl1990~@localhost:3306/stock?charset=utf8')
-    data_set.to_sql(con=engine, name='daily_price', if_exists='append', index=False, chunksize=10000)
+    data_set.to_sql(con=mysql_engine().engine, name='daily_price', if_exists='append', index=False, chunksize=10000)
 
 
 if __name__ == '__main__':

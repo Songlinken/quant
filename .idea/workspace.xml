@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39f4ce08-3551-4284-af0d-f18c2f62aa8f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Stock_Data/Source/obtain_parse_quandl_daily_price.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/quant.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/quant.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database/Stock_Tables/create_table_daily_price.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Database/Stock_Tables/create_table_daily_price.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stock_Data/Source/obtain_parse_wiki_sp500_symbols.py" beforeDir="false" afterPath="$PROJECT_DIR$/Stock_Data/Source/obtain_parse_wiki_sp500_symbols.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stock_Data/Source/obtain_parse_yahoo_daily_price.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stock_Data/Test/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stock_Data/Test/test_obtain_parse_wiki_sp500_symbols.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualEnv/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualEnv/pip-selfcheck.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML_Cluster/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML_Cluster/sp500_cluster.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stock_Data/Source/obtain_parse_quandl_daily_price.py" beforeDir="false" afterPath="$PROJECT_DIR$/Stock_Data/Source/obtain_parse_quandl_daily_price.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,28 +17,28 @@
     <session id="-2088949931">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="3" />
-          <entry key="sql" value="3" />
+          <entry key="py" value="4" />
+          <entry key="sql" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="3" />
-          <entry key="SQL" value="3" />
+          <entry key="Python" value="4" />
+          <entry key="SQL" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="147" />
           <entry key="dummy" value="7" />
-          <entry key="py" value="1225" />
+          <entry key="py" value="1935" />
           <entry key="sql" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="7" />
-          <entry key="Python" value="1372" />
+          <entry key="Python" value="2082" />
           <entry key="SQL" value="5" />
         </counts>
       </usages-collector>
@@ -52,13 +46,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Stock_Data/Source/obtain_parse_quandl_daily_price.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+            <state relative-caret-position="428">
+              <caret line="73" selection-start-line="73" selection-end-line="76" selection-end-column="39" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ML_Cluster/sp500_cluster.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="284">
+              <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+                <marker date="1535253305691" expanded="true" signature="1115:1120" ph="..." />
               </folding>
             </state>
           </provider>
@@ -73,6 +80,12 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ipd</find>
+      <find>ip</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -98,6 +111,7 @@
         <option value="$PROJECT_DIR$/Stock_Data/Source/obtain_parse_yahoo_daily_price.py" />
         <option value="$PROJECT_DIR$/Database/Stock_Tables/create_table_daily_price.sql" />
         <option value="$PROJECT_DIR$/Stock_Data/Source/obtain_parse_quandl_daily_price.py" />
+        <option value="$PROJECT_DIR$/ML_Cluster/sp500_cluster.py" />
       </list>
     </option>
   </component>
@@ -122,13 +136,7 @@
             <path>
               <item name="Quant" type="b2602c69:ProjectViewProjectNode" />
               <item name="Quant" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Quant" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Quant" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
-              <item name="Stock_Tables" type="462c0819:PsiDirectoryNode" />
+              <item name="ML_Cluster" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Quant" type="b2602c69:ProjectViewProjectNode" />
@@ -216,7 +224,7 @@
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11462882" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11462882" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -229,7 +237,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Python Console" order="10" visible="true" weight="0.32845187" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.32845187" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32912722" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -292,10 +300,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Stock_Data/Source/obtain_parse_quandl_daily_price.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+        <state relative-caret-position="428">
+          <caret line="73" selection-start-line="73" selection-end-line="76" selection-end-column="39" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ML_Cluster/sp500_cluster.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <marker date="1535253305691" expanded="true" signature="1115:1120" ph="..." />
           </folding>
         </state>
       </provider>
