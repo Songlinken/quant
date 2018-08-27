@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39f4ce08-3551-4284-af0d-f18c2f62aa8f" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/Stat_Test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Stat_Test/adf_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Stat_Test/hurst_exponent_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ML_Cluster/sp500_cluster.py" beforeDir="false" afterPath="$PROJECT_DIR$/ML_Cluster/sp500_cluster.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VirtualEnv/lib/python2.7/site-packages/backports/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/VirtualEnv/lib/python2.7/site-packages/backports/__init__.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,28 +17,28 @@
     <session id="-2088949931">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="4" />
+          <entry key="py" value="9" />
           <entry key="sql" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="4" />
+          <entry key="Python" value="9" />
           <entry key="SQL" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="184" />
+          <entry key="Python Console" value="234" />
           <entry key="dummy" value="7" />
-          <entry key="py" value="2192" />
+          <entry key="py" value="3190" />
           <entry key="sql" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="7" />
-          <entry key="Python" value="2376" />
+          <entry key="Python" value="3424" />
           <entry key="SQL" value="5" />
         </counts>
       </usages-collector>
@@ -57,14 +58,38 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ML_Cluster/sp500_cluster.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="131" column="14" lean-forward="true" selection-start-line="131" selection-start-column="14" selection-end-line="131" selection-end-column="14" />
+            <state relative-caret-position="-1966">
+              <caret selection-end-line="39" selection-end-column="19" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-                <marker date="1535319309498" expanded="true" signature="1226:1231" ph="..." />
+                <marker date="1535319516101" expanded="true" signature="1226:1231" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Stat_Test/hurst_exponent_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="39" column="68" lean-forward="true" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="68" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Stat_Test/adf_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="39">
+              <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -111,10 +136,12 @@
         <option value="$PROJECT_DIR$/Database/Stock_Tables/create_table_daily_price.sql" />
         <option value="$PROJECT_DIR$/Stock_Data/Source/obtain_parse_quandl_daily_price.py" />
         <option value="$PROJECT_DIR$/ML_Cluster/sp500_cluster.py" />
+        <option value="$PROJECT_DIR$/Stat_Test/adf_test.py" />
+        <option value="$PROJECT_DIR$/Stat_Test/hurst_exponent_test.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="536" />
     <option name="y" value="51" />
     <option name="width" value="1400" />
@@ -135,18 +162,7 @@
             <path>
               <item name="Quant" type="b2602c69:ProjectViewProjectNode" />
               <item name="Quant" type="462c0819:PsiDirectoryNode" />
-              <item name="ML_Cluster" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Quant" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Quant" type="462c0819:PsiDirectoryNode" />
-              <item name="Stock_Data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Quant" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Quant" type="462c0819:PsiDirectoryNode" />
-              <item name="Stock_Data" type="462c0819:PsiDirectoryNode" />
-              <item name="Source" type="462c0819:PsiDirectoryNode" />
+              <item name="Stat_Test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -233,7 +249,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3294979" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.32845187" />
@@ -309,11 +325,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ML_Cluster/sp500_cluster.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="131" column="14" lean-forward="true" selection-start-line="131" selection-start-column="14" selection-end-line="131" selection-end-column="14" />
+        <state relative-caret-position="-1966">
+          <caret selection-end-line="39" selection-end-column="19" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <marker date="1535319309498" expanded="true" signature="1226:1231" ph="..." />
+            <marker date="1535319516101" expanded="true" signature="1226:1231" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VirtualEnv/local/lib/python2.7/site-packages/numpy/core/fromnumeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="2922" column="4" selection-start-line="2922" selection-start-column="4" selection-end-line="2922" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VirtualEnv/local/lib/python2.7/site-packages/numpy/lib/polynomial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="392" column="4" selection-start-line="392" selection-start-column="4" selection-end-line="392" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Stat_Test/adf_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="39" column="32" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Stat_Test/hurst_exponent_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="39" column="68" lean-forward="true" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
