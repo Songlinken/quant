@@ -19,13 +19,13 @@ class Configuration(object):
         log.info('Constructing Singleton')
 
         # config file in Virtualenv
-        yamlfname = os.path.join(get_virtualenv_root(), 'conf', 'msv.yaml')
+        yamlfname = os.path.join(get_virtualenv_root(), 'conf', 'quant.yaml')
 
         # use global config file if no config file in Virtualenv
         if not os.path.exists(yamlfname):
-            yamlfname = os.path.join(os.getenv('HOME'), 'msv.yaml')
+            yamlfname = os.path.join(os.getenv('HOME'), 'quant.yaml')
             log.info('Using global configuration {}.'.format(yamlfname))
-        
+
         with open(yamlfname, 'r') as file_buffer, open(os.getenv('PYTHONPATH') + '/' + 'src/utility/conf.yaml', 'r') as schema:
             config = yaml.safe_load(file_buffer)
             schema = yaml.safe_load(schema)

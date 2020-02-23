@@ -29,15 +29,16 @@ stream_df = pd.DataFrame(columns=['event_date', 'event_time', 'symbol',
                                   'bid_volume_16', 'bid_volume_17', 'bid_volume_18', 'bid_volume_19', 'bid_volume_20'])
 
 
-class HuobiMarket(object):
+class HuobiMarketDepth(object):
 
-    def __init__(self):
-        super(HuobiMarket, self).__init__()
+    def __init__(self, market):
+        super(HuobiMarketDepth, self).__init__()
+        self.market = market
         self.url = 'wss://api-aws.huobi.pro/ws'
         self.ws = None
         self.stream_df = stream_df
         self.columns = stream_df.columns
-        self.table = 'huobi_market_depth ' + str(self.columns.tolist()).replace('[', '(').replace(']', ')').replace("'", '')
+        self.table = 'huobi_{}_market_depth '.format(market) + str(self.columns.tolist()).replace('[', '(').replace(']', ')').replace("'", '')
 
     def send_message(self, msg_dict):
         data = json.dumps(msg_dict).encode()
@@ -61,7 +62,7 @@ class HuobiMarket(object):
         ask_prices = [price[0] for price in msg_dict['tick']['asks']]
         bid_volumes = [price[1] for price in msg_dict['tick']['bids']]
         ask_volumes = [price[1] for price in msg_dict['tick']['asks']]
-        event_time = [datetime.datetime.fromtimestamp(msg_dict['ts'] / 1000)]
+        event_time = [datetime.datetime.fromtimestamp(msg_dict['tick']['ts'] / 1000)]
         event_date = [event_time[0].date()]
         symbol = [msg_dict['ch'].split('.')[1].upper()]
 
@@ -69,7 +70,7 @@ class HuobiMarket(object):
         self.stream_df = self.stream_df.append(pd.DataFrame([stream_row], columns=self.columns), ignore_index=True)
 
         if self.stream_df.shape[0] >= 100:
-            data_frame_to_sql(self.stream_df, self.table, schema='public', ssh=None, database='kguo', port=5432)
+            data_frame_to_sql(self.stream_df, self.table, schema='public', ssh=None, database='quantml', port=5432)
             self.stream_df.drop(self.stream_df.index, inplace=True)
             print('Finished updating table.')
 
@@ -84,7 +85,7 @@ class HuobiMarket(object):
     def on_open(self):
         def run(*args):
             data = {
-                'sub': 'market.btcusdt.depth.step1',
+                'sub': 'market.{}usdt.depth.step1'.format(self.market),
                 'id': 'id_1'
             }
 
@@ -104,4 +105,4 @@ class HuobiMarket(object):
 
 
 if __name__ == '__main__':
-    HuobiMarket().start()
+    HuobiMarketDepth('btc').start()
