@@ -1,0 +1,4 @@
+CREATE TABLE AVAILABLE_INSTRUMENTS (
+    PAIR_ID                     SERIAL    PRIMARY KEY,
+    INSTRUMENT                  CHAR(6)   UNIQUE NOT NULL
+);
