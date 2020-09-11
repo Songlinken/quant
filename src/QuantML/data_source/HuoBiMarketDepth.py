@@ -58,16 +58,17 @@ class HuobiMarketDepth(object):
             }
             self.send_message(data)
 
-        bid_prices = [price[0] for price in msg_dict['tick']['bids']]
-        ask_prices = [price[0] for price in msg_dict['tick']['asks']]
-        bid_volumes = [price[1] for price in msg_dict['tick']['bids']]
-        ask_volumes = [price[1] for price in msg_dict['tick']['asks']]
-        event_time = [datetime.datetime.fromtimestamp(msg_dict['tick']['ts'] / 1000)]
-        event_date = [event_time[0].date()]
-        symbol = [msg_dict['ch'].split('.')[1].upper()]
+        else:
+            bid_prices = [price[0] for price in msg_dict['tick']['bids']]
+            ask_prices = [price[0] for price in msg_dict['tick']['asks']]
+            bid_volumes = [price[1] for price in msg_dict['tick']['bids']]
+            ask_volumes = [price[1] for price in msg_dict['tick']['asks']]
+            event_time = [datetime.datetime.fromtimestamp(msg_dict['tick']['ts'] / 1000)]
+            event_date = [event_time[0].date()]
+            symbol = [msg_dict['ch'].split('.')[1].upper()]
 
-        stream_row = event_date + event_time + symbol + ask_prices + ask_volumes + bid_prices + bid_volumes
-        self.stream_df = self.stream_df.append(pd.DataFrame([stream_row], columns=self.columns), ignore_index=True)
+            stream_row = event_date + event_time + symbol + ask_prices + ask_volumes + bid_prices + bid_volumes
+            self.stream_df = self.stream_df.append(pd.DataFrame([stream_row], columns=self.columns), ignore_index=True)
 
         if self.stream_df.shape[0] >= 100:
             data_frame_to_sql(self.stream_df, self.table, schema='public', ssh=None, database='quantml', port=5432)
@@ -80,6 +81,8 @@ class HuobiMarketDepth(object):
         pprint.pprint(error)
 
     def on_close(self):
+        # keep socket alive after 24hr auto close
+        HuobiMarketDepth(self.market).start()
         print("### closed ###")
 
     def on_open(self):

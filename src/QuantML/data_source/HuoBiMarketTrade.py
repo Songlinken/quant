@@ -62,6 +62,7 @@ class HuobiMarketTrade(object):
         pprint.pprint(error)
 
     def on_close(self):
+        HuobiMarketTrade(self.market).start()
         print("### closed ###")
 
     def on_open(self):

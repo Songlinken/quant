@@ -1,4 +1,4 @@
-CREATE TABLE HUOBI_BTC_MARKET_TRADE(
+CREATE TABLE HUOBI_ETH_MARKET_TRADE(
     DEFAULT_ID                  BIGSERIAL    PRIMARY KEY,
     TRADE_ID                    BIGINT       NOT NULL,
     EVENT_DATE                  DATE         NOT NULL,
@@ -9,5 +9,5 @@ CREATE TABLE HUOBI_BTC_MARKET_TRADE(
     QUANTITY                    NUMERIC
 );
 
-CREATE INDEX idx_huobi_btc_market_trade_1 ON HUOBI_BTC_MARKET_TRADE (EVENT_DATE);
-CREATE INDEX idx_huobi_btc_market_trade_2 ON HUOBI_BTC_MARKET_TRADE (SYMBOL);
+CREATE INDEX idx_huobi_eth_market_trade_1 ON HUOBI_ETH_MARKET_TRADE (EVENT_DATE);
+CREATE INDEX idx_huobi_eth_market_trade_2 ON HUOBI_ETH_MARKET_TRADE (SYMBOL);
