@@ -23,6 +23,7 @@ def callback(data_type: 'SubscribeMessageType', event: 'any'):
 
     elif data_type == SubscribeMessageType.PAYLOAD:
 
+        event_id = event.lastId
         event_time = datetime.datetime.fromtimestamp(event.eventTime / 1000)
         trade_time = datetime.datetime.fromtimestamp(event.time / 1000)
         symbol = event.symbol
@@ -30,8 +31,8 @@ def callback(data_type: 'SubscribeMessageType', event: 'any'):
         quantity = event.qty
         is_buyer_maker = event.isBuyerMaker
 
-        stream_row = [event_time] + [trade_time] + [symbol] + [price] + [quantity] + [is_buyer_maker]
-        stream_df = pd.DataFrame([stream_row], columns=['event_time', 'trade_time', 'symbol', 'price', 'quantity', 'is_buyer_maker'])
+        stream_row = [event_id] + [event_time] + [trade_time] + [symbol] + [price] + [quantity] + [is_buyer_maker]
+        stream_df = pd.DataFrame([stream_row], columns=['event_id', 'event_time', 'trade_time', 'symbol', 'price', 'quantity', 'is_buyer_maker'])
 
         table = 'binance_btc_market_trade ' + str(stream_df.columns.tolist()).replace('[', '(').replace(']', ')').replace("'", '')
         data_frame_to_sql(stream_df, table, schema='public', ssh=None, database='quantml', port=5432)

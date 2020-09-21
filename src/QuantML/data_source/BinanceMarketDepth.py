@@ -24,6 +24,7 @@ def callback(data_type: 'SubscribeMessageType', event: 'any'):
 
     elif data_type == SubscribeMessageType.PAYLOAD:
 
+        event_id = event.lastUpdateId
         event_time = datetime.datetime.fromtimestamp(event.eventTime / 1000)
         trade_time = datetime.datetime.fromtimestamp(event.transactionTime / 1000)
         symbol = event.symbol
@@ -32,8 +33,8 @@ def callback(data_type: 'SubscribeMessageType', event: 'any'):
         bid_volumes = [volume.qty for volume in event.bids]
         ask_volumes = [volume.qty for volume in event.asks]
 
-        stream_row = [event_time] + [trade_time] + [symbol] + ask_prices + ask_volumes + bid_prices + bid_volumes
-        stream_df = pd.DataFrame([stream_row], columns=['event_time', 'trade_time', 'symbol',
+        stream_row = [event_id] + [event_time] + [trade_time] + [symbol] + ask_prices + ask_volumes + bid_prices + bid_volumes
+        stream_df = pd.DataFrame([stream_row], columns=['event_id', 'event_time', 'trade_time', 'symbol',
                                                         'ask_price_1', 'ask_price_2', 'ask_price_3', 'ask_price_4', 'ask_price_5',
                                                         'ask_price_6', 'ask_price_7', 'ask_price_8', 'ask_price_9', 'ask_price_10',
                                                         'ask_price_11', 'ask_price_12', 'ask_price_13', 'ask_price_14', 'ask_price_15',

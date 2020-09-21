@@ -1,5 +1,5 @@
 CREATE TABLE BINANCE_BTC_MARKET_TRADE(
-    DEFAULT_ID                  BIGSERIAL    PRIMARY KEY,
+    EVENT_ID                    BIGINT    PRIMARY KEY,
     EVENT_TIME                  TIMESTAMP    NOT NULL,
     TRADE_TIME                  TIMESTAMP    NOT NULL,
     SYMBOL                      VARCHAR(15)  NOT NULL,
